@@ -23,13 +23,11 @@ public class CuentaCorriente extends Cuenta {
 //que permita retirar dinero aunque te quedes en saldo negativo
 // de todos modos este metodo le falta un parametro 
 // el saldo que vas  retirar
-    @Override 
-    public float retirar(float ammountToSubstract) {
-
-
+    public float retirar () {
+        float ammountToSubstract = 0;    
         if ((saldo - ammountToSubstract)>=0) {
             System.out.println("No se puede tener saldo inferior a cero");
-            return saldo
+            return saldo;
         }
 
         System.out.println("Se ha procedido a retirar la cantidad indicada");
@@ -43,6 +41,6 @@ public class CuentaCorriente extends Cuenta {
         this.saldo = (int) ( saldo * INTERES_FIJO);
         return saldo;
     }
-    
+
     
 }

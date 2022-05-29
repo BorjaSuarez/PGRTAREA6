@@ -35,9 +35,9 @@ public class CuentaAhorro extends Cuenta {
 // lo mimso que con la otra clase de la cuenta corriente, depende de lo que quieras hacer
 // pero si va a retirar daele un valor por parametro
 
-    public float retirar(float ammountToSubstract) {
+    public float retirar() {
         
-        
+        float ammountToSubstract=0;
         if ((saldo - ammountToSubstract) < saldoMinimo ) {
             System.out.println("No se puede retirar dinero por debajo del minimo de saldo");
             return this.saldo;
@@ -50,7 +50,7 @@ public class CuentaAhorro extends Cuenta {
         // tambien no tiene mucho sentido que pueda retirar con una variable del tipo float si al final casteamos al valor entero que tiene el tipo saldo
         //
 
-        this.saldo = (int) (saldo - retirado);
+        this.saldo = (int) (saldo - ammountToSubstract);
         
         return saldo;
 
