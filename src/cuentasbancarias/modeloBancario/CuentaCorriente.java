@@ -11,35 +11,38 @@ package cuentasbancarias.modeloBancario;
 
 //Checking's account
 public class CuentaCorriente extends Cuenta {
-    
-    // fixInteresRate
-    static protected float interesFijo = 0.15f;
+
+    final float interesFijo = 0.15f;
 
     Cliente c = new Cliente(321, "Antonio Suarez", "Calle Falsa", "987654321");
-    
-    //Checking Account
+
+    public CuentaCorriente() {
+    }
+
     public CuentaCorriente(int numeroDeCuenta, int saldo, Cliente titular) {
         super(numeroDeCuenta, saldo, titular);
-
     }
     
-    
-    
-
-    @Override //Withdraw
     public float retirar() {
-        //por completar
-        return 0;
-        //por completar
-    }
+    float retirado = 0;
+        
+        if ((saldo - retirado)>=0) {
+            System.out.println("No se puede tener saldo inferior a cero");
+        } else {
+            saldo = (int) (saldo - retirado);
+        }
+        return saldo;
 
-    @Override //UpateBalance
+    }   
+
+    /**
+     *
+     * @return
+     */
+    @Override
     public float actualizarSaldo() {
-    //
-        
-        
-        return 0;
-        //por completar
+        saldo = (int) (saldo*interesFijo);
+        return saldo;
     }
     
     

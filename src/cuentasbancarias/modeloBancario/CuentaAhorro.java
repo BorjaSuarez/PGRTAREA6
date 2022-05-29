@@ -9,7 +9,7 @@ package cuentasbancarias.modeloBancario;
  * @author Borja
  */
 
-// Savings account
+
 public class CuentaAhorro extends Cuenta {
       
     protected float interesVariable;
@@ -23,7 +23,6 @@ public class CuentaAhorro extends Cuenta {
         this.saldoMinimo = saldoMinimo;
     }
     
-    //Withdraw
     public float retirar() {
         float retirado = 0;
         
@@ -35,11 +34,11 @@ public class CuentaAhorro extends Cuenta {
         return saldo;
 
     }
-    // Update Balance
-    @Override
+
     public float actualizarSaldo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+        saldo = (int) (saldo*interesVariable);
+        return saldo;
+    } 
     
     }
 
