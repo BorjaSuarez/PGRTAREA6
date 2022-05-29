@@ -12,36 +12,35 @@ package cuentasbancarias.modeloBancario;
 //Checking's account
 public class CuentaCorriente extends Cuenta {
 
-    final float interesFijo = 0.15f;
-
-    Cliente cc = new Cliente(321, "Antonio Suarez", "Calle Falsa", "987654321");
-
-    public CuentaCorriente() {
-    }
+    private final float INTERES_FIJO = 0.15f;
 
     public CuentaCorriente(int numeroDeCuenta, int saldo, Cliente titular) {
         super(numeroDeCuenta, saldo, titular);
     }
     
-    public float retirar() {
-    float retirado = 0;
         
-        if ((saldo - retirado)>=0) {
+//no se exactamente como funciona la retirada de saldo de una cuenta correinte pero es posible
+//que permita retirar dinero aunque te quedes en saldo negativo
+// de todos modos este metodo le falta un parametro 
+// el saldo que vas  retirar
+    @Override 
+    public float retirar(float ammountToSubstract) {
+
+
+        if ((saldo - ammountToSubstract)>=0) {
             System.out.println("No se puede tener saldo inferior a cero");
-        } else {
-            saldo = (int) (saldo - retirado);
+            return saldo
         }
-        return saldo;
+
+        System.out.println("Se ha procedido a retirar la cantidad indicada");
+        return saldo - ammountToSubstract;
 
     }   
 
-    /**
-     *
-     * @return
-     */
+  
     @Override
     public float actualizarSaldo() {
-        saldo = (int) (saldo*interesFijo);
+        this.saldo = (int) ( saldo * INTERES_FIJO);
         return saldo;
     }
     
