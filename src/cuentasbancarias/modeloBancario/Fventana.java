@@ -15,6 +15,8 @@ public class Fventana extends javax.swing.JFrame {
     CuentaCorriente cc;
     
     public Fventana() {
+        ca = new CuentaAhorro();
+        cc = new CuentaCorriente();
         initComponents();
         
         
