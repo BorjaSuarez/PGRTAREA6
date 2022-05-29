@@ -15,14 +15,14 @@ public class CuentaAhorro extends Cuenta {
     protected float interesVariable;
     protected float saldoMinimo = 500;
     
-    Cliente a = new Cliente(123, "Borja Suarez", "Calle Falsa", "123456789");
+    Cliente ca = new Cliente(123, "Borja Suarez", "Calle Falsa", "123456789");
     
     public CuentaAhorro(float interesVariable, float saldoMinimo, int numeroDeCuenta, int saldo, Cliente titular) {
         super(numeroDeCuenta, saldo, titular);
         this.interesVariable = interesVariable;
         this.saldoMinimo = saldoMinimo;
     }
-    
+
     public float retirar() {
         float retirado = 0;
         

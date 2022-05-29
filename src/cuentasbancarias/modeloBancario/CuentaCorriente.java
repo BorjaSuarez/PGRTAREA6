@@ -14,7 +14,7 @@ public class CuentaCorriente extends Cuenta {
 
     final float interesFijo = 0.15f;
 
-    Cliente c = new Cliente(321, "Antonio Suarez", "Calle Falsa", "987654321");
+    Cliente cc = new Cliente(321, "Antonio Suarez", "Calle Falsa", "987654321");
 
     public CuentaCorriente() {
     }
