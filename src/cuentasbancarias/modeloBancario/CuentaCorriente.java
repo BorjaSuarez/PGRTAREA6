@@ -12,10 +12,17 @@ package cuentasbancarias.modeloBancario;
 //Checking's account
 public class CuentaCorriente extends Cuenta {
 
-    private final float INTERES_FIJO = 0.15f;
+    private final float interesFijo = 0.15f;
 
     public CuentaCorriente(int numeroDeCuenta, int saldo, Cliente titular) {
         super(numeroDeCuenta, saldo, titular);
+    }
+    
+    public void ingresar (float ingresar) {
+        if (ingresar <= 0)
+            System.out.println("El ingreso debe ser superior a cero euros");
+        else
+            saldo = (int) (saldo + ingresar);
     }
     
         
@@ -33,11 +40,11 @@ public class CuentaCorriente extends Cuenta {
         return saldo - ammountToSubstract;
 
     }   
-
+    
   
     @Override
     public float actualizarSaldo() {
-        this.saldo = (int) ( saldo * INTERES_FIJO);
+        this.saldo = (int) ( saldo * interesFijo);
         return saldo;
     }
 

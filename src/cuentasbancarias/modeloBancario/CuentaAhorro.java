@@ -29,8 +29,13 @@ public class CuentaAhorro extends Cuenta {
         this.interesVariable = interesVariable;
         this.saldoMinimo = 500;
     }
-
-
+     
+    public void ingresar (float ingresar) {
+        if (ingresar <= 0)
+            System.out.println("El ingreso debe ser superior a cero euros");
+        else
+            saldo = (int) (saldo + ingresar);
+    }
 
 // lo mimso que con la otra clase de la cuenta corriente, depende de lo que quieras hacer
 // pero si va a retirar daele un valor por parametro
