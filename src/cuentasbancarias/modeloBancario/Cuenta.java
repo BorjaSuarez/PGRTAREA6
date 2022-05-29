@@ -64,7 +64,7 @@ public abstract class Cuenta {
     }
     
     //withdraw
-    abstract public float retirar ();
+    abstract public float retirar (float ammountToSubstract);
     
     //update balance
     abstract public float actualizarSaldo ();
