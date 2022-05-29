@@ -11,15 +11,15 @@ package cuentasbancarias.modeloBancario;
 
 //acc
 public abstract class Cuenta {
-    private int numeroDeCuenta;
-    float saldo;
-    private Cliente titular;
+    protected int numeroDeCuenta;
+    protected int saldo;
+    protected Cliente titular;
 
     public Cuenta() {
     }
     
     //acc
-    public Cuenta(int numeroDeCuenta, float saldo, Cliente titular) {
+    public Cuenta(int numeroDeCuenta, int saldo, Cliente titular) {
         this.numeroDeCuenta = numeroDeCuenta;
         this.saldo = saldo;
         this.titular = titular;
@@ -60,7 +60,7 @@ public abstract class Cuenta {
         if (ingresar <= 0)
             System.out.println("El ingreso debe ser superior a cero euros");
         else
-            saldo = saldo + ingresar;
+            saldo = (int) (saldo + ingresar);
     }
     
     //withdraw

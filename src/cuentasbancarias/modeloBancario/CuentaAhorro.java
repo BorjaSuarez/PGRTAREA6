@@ -11,26 +11,26 @@ package cuentasbancarias.modeloBancario;
 
 // Savings account
 public class CuentaAhorro extends Cuenta {
-    
-    // variableInterestRate
+      
     protected float interesVariable;
+    protected float saldoMinimo = 500;
     
-    //minBalance
-    protected float saldoMinimo;
+    Cliente a = new Cliente(123, "Borja Suarez", "Calle Falsa", "123456789");
     
-    // Savings account
-    public CuentaAhorro(int numeroDeCuenta, float saldo, Cliente titular) {
+    public CuentaAhorro(float interesVariable, float saldoMinimo, int numeroDeCuenta, int saldo, Cliente titular) {
         super(numeroDeCuenta, saldo, titular);
-    }    
-    // Funcionara el pull?? 
+        this.interesVariable = interesVariable;
+        this.saldoMinimo = saldoMinimo;
+    }
+    
     //Withdraw
     public float retirar() {
         float retirado = 0;
         
-        if (saldoMinimo>retirado) {
+        if ((saldo - retirado)<saldoMinimo) {
             System.out.println("No se puede retirar dinero por debajo del minimo de saldo");
         } else {
-            saldo = saldo - retirado;
+            saldo = (int) (saldo - retirado);
         }
         return saldo;
 
